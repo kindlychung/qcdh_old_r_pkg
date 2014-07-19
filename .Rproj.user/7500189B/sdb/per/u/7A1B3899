@@ -1,0 +1,17 @@
+{
+    "contents" : "-12 * ((-3):3) + 91\n",
+    "created" : 1393850024640.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "391939495",
+    "id" : "7A1B3899",
+    "lastKnownWriteTime" : 55477296,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

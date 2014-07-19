@@ -1,0 +1,10 @@
+Package: qcdh
+Title: A GWAS tool that takes compound heterozygosity into account
+Description:
+Version: 0.1
+Author: Kaiyin Zhong <kindlychung@gmail.com>
+Maintainer: Kaiyin Zhong <kindlychung@gmail.com>
+Depends: R(>= 3.0.1), doMC, bigmemory, biganalytics, tools, foreach, DatABEL
+Imports: doMC, bigmemory, biganalytics, tools, foreach, Rcpp (>= 0.11.0), RcppArmadillo (>= 0.4.000.2)
+LinkingTo: Rcpp, RcppArmadillo
+License: GPL3

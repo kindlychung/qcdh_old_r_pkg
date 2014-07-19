@@ -1,0 +1,10 @@
+useDynLib(qcdh)
+importFrom(Rcpp, sourceCpp)
+import(doMC)
+import(foreach)
+import(bigmemory)
+import(biganalytics)
+import(tools)
+
+exportPattern('^[a-zA-Z]')
+exportClass(winIdx, collapsegen, compP, haplom)

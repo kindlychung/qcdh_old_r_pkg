@@ -1,0 +1,17 @@
+{
+    "contents" : "require(bigmemory)\nsetwd(\"/tmp\")\nx = matrix(1:6, 2, byrow=T)\nbmfile = \"x.bmbin\"\nbmdesfile = \"x.bmdes\"\nbigmat = as.big.matrix(x, type=\"short\", backingfile=bmfile, descriptorfile=bmdesfile)\nbigmat[,]\n\n\nrequire(bigmemory)\nsetwd(\"~/workspace/qcdhcpp/data/\")\nx = matrix(rnorm(300), 100)\nbmfilex = \"lmtest2x.bmbin\"\nbmdesfilex = \"lmtest2x.bmdes\"\nbigmat = as.big.matrix(x, type=\"double\", backingfile=bmfilex, descriptorfile=bmdesfilex)\nbigmat[,]\ny = matrix(rnorm(100), 100, 1)\nbmfiley = \"lmtest2y.bmbin\"\nbmdesfiley = \"lmtest2y.bmdes\"\nbigmaty = as.big.matrix(y, type=\"double\", backingfile=bmfiley, descriptorfile=bmdesfiley)\nlmsum = summary(lm(y~x))$coef\nlmsum\ncolnames(lmsum) = NULL\nrownames(lmsum) = NULL\nbmfileLm = \"lmtest2lmres.bmbin\"\nbmdesfileLm = \"lmtest2lmres.bmdes\"\nbigmatLmsum = as.big.matrix(lmsum, type=\"double\", backingfile=bmfileLm, descriptorfile=bmdesfileLm)\n\nx = matrix(sample(0:2, 300, replace=T), 100)\ny = matrix(rnorm(100), 100)\nmycovs = matrix(rnorm(200), 100)\npvals = matrix(, nrow=3, ncol=1)\npvals\nfor (i in 1:3) {\n  xmat = cbind(x[, i], mycovs)\n  print(head(xmat))\n  print(summary(lm(y~xmat))$coef)\n  pvals[i, 1] = summary(lm(y~xmat))$coef[2, 4]\n}\n\nbmfilePvalEachPval = \"pvalEachPval.bmbin\"\nbmdesfilePvalEachPval = \"pvalEachPval.bmdes\"\nbigmatPvalEachPval = as.big.matrix(pvals, type=\"double\", backingfile = bmfilePvalEachPval, descriptorfile = bmdesfilePvalEachPval)\nbigmatPvalEachPval[,]\n\nbmfilePvalEachCov = \"pvalEachCov.bmbin\"\nbmdesfilePvalEachCov = \"pvalEachCov.bmdes\"\nbigmatPvalEachCov = as.big.matrix(mycovs, type=\"double\", backingfile = bmfilePvalEachCov, descriptorfile = bmdesfilePvalEachCov)\nbigmatPvalEachCov[,]\n\nbmfilePvalEachx = \"pvalEachx.bmbin\"\nbmdesfilePvalEachx = \"pvalEachx.bmdes\"\nbigmatPvalEachx = as.big.matrix(x, type=\"double\", backingfile = bmfilePvalEachx, descriptorfile = bmdesfilePvalEachx)\nbigmatPvalEachx[,]\n\nbmfilePvalEachy = \"pvalEachy.bmbin\"\nbmdesfilePvalEachy = \"pvalEachy.bmdes\"\nbigmatPvalEachy = as.big.matrix(y, type=\"double\", backingfile = bmfilePvalEachy, descriptorfile = bmdesfilePvalEachy)\nbigmatPvalEachy[,]\n",
+    "created" : 1394541137122.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3715585697",
+    "id" : "2B534578",
+    "lastKnownWriteTime" : 1395080283,
+    "path" : "~/Desktop/x.r",
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
